@@ -1,0 +1,27 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+    <h1>Buscar Cursos</h1>
+    <form action="buscar_cursos_form" method="POST">
+        {% csrf_token %}
+        <p>Nombre:</p> 
+        <input type="text" name="nombre" required>
+        <br>    
+        <button>Buscar</button>
+    </form>
+    <div>
+        {% if cursos %}
+            <ul>
+                {% for curso in cursos %}
+                    <li>Nombre: {{ curso.nombre }} - Camada: {{ curso.camada }}</li>
+                {% endfor %} 
+            </ul>
+        {% else %}
+            <p>No se encontraron cursos</p>
+        {% endif %}
+    </div>
+
+{% endblock %}

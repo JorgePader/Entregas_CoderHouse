@@ -1,0 +1,27 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+    <h1>Buscar Profesores</h1>
+    <form action="buscar_profesor_form" method="POST">
+        {% csrf_token %}
+        <p>Nombre:</p> 
+        <input type="text" name="nombre" required>
+        <br>    
+        <button>Buscar</button>
+    </form>
+    <div>
+        {% if profesores %}
+            <ul>
+                {% for profesor in profesores %}
+                    <li>Nombre: {{ profesor.nombre }} - Apellido: {{ profesor.apellido }}</li>
+                {% endfor %} 
+            </ul>
+        {% else %}
+            <p>No se encontraron profesores</p>
+        {% endif %}
+    </div>
+
+{% endblock %}

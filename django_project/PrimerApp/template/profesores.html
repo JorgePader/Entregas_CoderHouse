@@ -1,0 +1,71 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block contenido %}
+    <main>
+        <div class="container">
+            <h1 class="text-center">Profesores</h1>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="card mb-3">
+                        <img src="{% static 'PrimerApp/assets/img/profesores.1.jpg' %}" class="card-img-top img-fluid" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Profesor 1</h5>
+                            <p class="card-text text-center">Descripción del profesor 1.</p>
+                            <a href="#" class="btn btn-primary btn-block">Ver Perfil</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card mb-3">
+                        <img src="{% static 'PrimerApp/assets/img/profesores.2.jpg' %}" class="card-img-top img-fluid" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Profesor 2</h5>
+                            <p class="card-text text-center">Descripción del profesor 2.</p>
+                            <a href="#" class="btn btn-primary btn-block">Ver Perfil</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card mb-3">
+                        <img src="{% static 'PrimerApp/assets/img/profesores.3.jpg' %}" class="card-img-top img-fluid" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Profesor 3</h5>
+                            <p class="card-text text-center">Descripción del profesor 3.</p>
+                            <a href="#" class="btn btn-primary btn-block">Ver Perfil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Aquí va el código para el formulario existente -->
+        </div>
+    </main>
+
+    <form>
+        <main class="container">
+            <h1 class="text-xl-center title">Profesores</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for n in profesores %}
+                        <tr>
+                            <th scope="row">{{ n.id }}</th>
+                            <td>{{ n.nombre }}</td>
+                            <td>{{ n.apellido }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button class="btn btn-primary" formaction="{% url 'alta_profesor_form' %}">Alta Profesores</button>
+            <button class="btn btn-primary" formaction="{% url 'buscar_profesor_form' %}">Buscar Profesores</button>
+        </main>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+    <h1>Buscar Alumno</h1>
+    <form action="buscar_alumno_form" method="POST">
+        {% csrf_token %}
+        <p>Nombre:</p> 
+        <input type="text" name="nombre" required>
+        <br>    
+        <button>Buscar</button>
+    </form>
+    <div>
+        {% if alumnos %}
+            <ul>
+                {% for alumno in alumnos %}
+                    <li>Nombre: {{ alumno.nombre }} - Apellido: {{ alumno.apellido }} - Legajo: {{ alumno.legajo}}</li>
+                {% endfor %} 
+            </ul>
+        {% else %}
+            <p>No se encontraron alumnos</p>
+        {% endif %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="card mb-3">
+                    <img src="{% static 'PrimerApp/assets/img/testimonials-1.jpg' %}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Maria Pepita</h5>
+                        <p class="card-text text-center">Me gustó mucho el curso</p>
+                        <a href="#" class="btn btn-danger btn-block">Enviar Mensaje</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card mb-3">
+                    <img src="{% static 'PrimerApp/assets/img/testimonials-2.jpg' %}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Juan Lopez</h5>
+                        <p class="card-text text-center">Me gustó mucho el curso</p>
+                        <a href="#" class="btn btn-danger btn-block">Enviar Mensaje</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card mb-3">
+                    <img src="{% static 'PrimerApp/assets/img/testimonials-3.jpg' %}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Micaela Martinez</h5>
+                        <p class="card-text text-center">Me gustó mucho el curso</p>
+                        <a href="#" class="btn btn-danger btn-block">Enviar Mensaje</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<form>
+    <main class="container">
+        <h1 class="text-xl-center title">Alumnos</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Legajo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for n in alumnos %}
+                    <tr>
+                        <th scope="row">{{ n.id }}</th>
+                        <td>{{ n.nombre }}</td>
+                        <td>{{ n.apellido }}</td>
+                        <td>{{ n.legajo }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button class="btn btn-primary" formaction="{% url 'alta_alumno_form' %}">Alta Alumno</button>
+        <button class="btn btn-primary" formaction="{% url 'buscar_alumno_form' %}">Buscar Alumno</button>
+    </main>
+</form>
+
+
+{% endblock %}

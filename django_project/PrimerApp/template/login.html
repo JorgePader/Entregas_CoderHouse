@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="{% static 'PrimerApp\css\styles.css' %}" rel="stylesheet" />
+    
+</head>
+
+<body class="login">
+    
+    <div class="container-login">
+        <h1 class="page-title">App de CoderHouse</h1>
+        <h2>Iniciar sesión</h2>
+        <form>
+            <input type="text" placeholder="Correo electrónico" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button type="submit">Iniciar sesión</button>
+        </form>
+        <div class="social-icons-login">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>¿No tienes una cuenta? <a href="#">Regístrate aquí</a></p>
+    </div>
+
+</body>
+
+</html>
