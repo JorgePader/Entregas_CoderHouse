@@ -59,6 +59,8 @@
                             <th scope="row">{{ n.id }}</th>
                             <td>{{ n.nombre }}</td>
                             <td>{{ n.apellido }}</td>
+                            <td><a href="{% url 'eliminar_profesor_form' n.id %}" class="btn btn-danger">Eliminar</a></td>
+                            <td><a href="{% url 'modificar_profesor_form' n.id %}" class="btn btn-warning">Modificar</a></td>
                         </tr>
                     {% endfor %}
                 </tbody>

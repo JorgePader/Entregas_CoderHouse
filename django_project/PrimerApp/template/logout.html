@@ -1,0 +1,10 @@
+{% extends 'login.html' %}
+
+{% load static %}
+
+{% block logout %}
+    <form action="login_request" method="GET">
+        <h1>Gracias vuelva pronto</h1>
+        <a href="{% url 'login_request' %}" ></a>
+    </form>
+{% endblock %}

@@ -59,6 +59,8 @@
                         <td>{{ n.nombre }}</td>
                         <td>{{ n.apellido }}</td>
                         <td>{{ n.legajo }}</td>
+                        <td><a href="{% url 'eliminar_alumno_form' n.id %}" class="btn btn-danger">Eliminar</a></td>
+                        <td><a href="{% url 'modificar_alumno_form' n.id %}" class="btn btn-warning">Modificar</a></td>
                     </tr>
                 {% endfor %}
             </tbody>

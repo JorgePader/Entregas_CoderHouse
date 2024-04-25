@@ -21,6 +21,8 @@
                             <th scope="row">{{ n.id }}</th>
                             <td>{{ n.nombre }}</td>
                             <td>{{ n.camada }}</td>
+                            <td><a href="{% url 'eliminar_curso_form' n.id %}" class="btn btn-danger">Eliminar</a></td>
+                            <td><a href="{% url 'modificar_curso_form' n.id %}" class="btn btn-warning">Modificar</a></td>
                         </tr>
                     {% endfor %}
                 </tbody>

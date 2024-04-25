@@ -11004,3 +11004,11 @@ body.login {
   border: 2px solid #ccc; /* Define el borde del recuadro */
   border-radius: 5px; /* Hace que los bordes sean redondeados */
 }
+.mensaje-register {
+  background-color: lightblue;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}

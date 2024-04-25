@@ -20,21 +20,34 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
+                <!-- {% if not request.user.is_authenticated %}
+                <a class="btn btn-primary" style="background-color: darkblue;" href="{% url 'login_request' %}">Login</a>
+                {% endif %}
+                {% if request.user.is_authenticated %} -->
                 <a class="btn btn-primary" style="background-color: darkblue;" href="{% url 'home' %}">Home</a>
                 <div class="ml-auto">
                     <a class="btn btn-primary" style="background-color: darkblue;" href="{% url 'cursos' %}">Cursos</a>
                     <a class="btn btn-primary" style="background-color: darkblue;" href="{% url 'alumnos' %}">Alumnos</a>
                     <a class="btn btn-primary" style="background-color: darkblue;" href="{% url 'profesores' %}">Profesores</a>
                 </div>
+                <div></div>
+                <a class="btn btn-warning"  href="{% url 'editarPerfil' %}">Editar Perfil</a>
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-primary" style="background-color: rgb(227, 0, 0);" type="submit">Logout</button>
+                </form>
+                <!-- {% endif %} -->
             </div>
         </nav>
-        
+         
         <!-- Masthead-->
         <header class="masthead">
             <div class="container position-relative">
                 <h1 class="text-center" style="color: whitesmoke; font-family: 'Poppins', sans-serif; font-size: 3.5em; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">App de CoderHouse</h1>
             </div>
         </header>
+
+       <div class="mensaje-register">{{ Mensaje }}</div>
 
         <!-- INICIO mi contenido-->
         {% block contenido %}
